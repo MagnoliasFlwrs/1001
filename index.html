@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="1001 DAY — студия дизайна интерьеров. Продуманные и комфортные пространства.">
+    <title>
+      1001 DAY — Дизайн интерьеров
+    </title>
+    <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="assets/vendor/swiper-bundle.min.js" defer>
+    </script>
+    <script src="script.js" defer>
+    </script>
+  </head>
+  <body>
+    <div class="page page--home" id="top">
+      <header class="site-header site-header--home">
+        <a class="site-header__logo" href="#top" aria-label="1001 DAY — главная">
+          <img src="assets/icons/logo.svg" alt="1001 DAY">
+        </a>
+        <button class="site-header__menu" type="button" data-open="menu-dialog" aria-label="Открыть меню" aria-controls="menu-dialog" aria-expanded="false">
+          <img src="assets/icons/menu.svg" alt="">
+        </button>
+      </header>
+      <main class="home-content">
+        <section class="hero swiper" aria-label="Проекты студии">
+          <div class="hero__slides swiper-wrapper">
+            <div class="hero__slide swiper-slide">
+              <img class="hero__image" src="assets/images/haiku.png" alt="Haiku — интерьер кухни и столовой">
+              <h1 class="hero__title">
+                <a href="project.html">
+                  Haiku
+                </a>
+              </h1>
+            </div>
+            <div class="hero__slide swiper-slide">
+              <img class="hero__image" src="assets/images/oak-sky.png" alt="Oak&amp;Sky — офис с синими рабочими столами">
+              <h2 class="hero__title">
+                <a href="project.html">
+                  Oak&amp;Sky
+                </a>
+              </h2>
+            </div>
+            <div class="hero__slide swiper-slide">
+              <img class="hero__image" src="assets/images/sacre-bleu.png" alt="Sacré Bleu — интерьер гостиной">
+              <h2 class="hero__title">
+                <a href="project.html">
+                  Sacré Bleu
+                </a>
+              </h2>
+            </div>
+            <div class="hero__slide swiper-slide">
+              <img class="hero__image" src="assets/images/by-time.png" alt="By-time — кухня с зелеными фасадами">
+              <h2 class="hero__title">
+                <a href="project.html">
+                  By-time
+                </a>
+              </h2>
+            </div>
+            <div class="hero__slide swiper-slide">
+              <img class="hero__image" src="assets/images/people.png" alt="People — интерьер ресторана">
+              <h2 class="hero__title">
+                <a href="project.html">
+                  People
+                </a>
+              </h2>
+            </div>
+          </div>
+          <div class="hero__controls">
+            <div class="hero__pagination">
+            </div>
+            <div class="hero__arrows">
+              <button class="hero__previous" aria-label="Предыдущий слайд">
+                <img src="assets/icons/arrow-prev.svg" alt="">
+              </button>
+              <button class="hero__next" aria-label="Следующий слайд">
+                <img src="assets/icons/arrow-right.svg" alt="">
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+          <div class="projects__intro" id="about">
+            <h2 class="projects__heading" id="projects-title">
+              <img src="assets/icons/arrow-right.svg" alt="">
+              Избранные проекты
+            </h2>
+            <p class="projects__description">
+              Мы создаём продуманные и комфортные интерьеры, в которых эстетика сочетается с функциональностью. Учитываем особенности пространства, образ жизни и пожелания заказчика, чтобы каждый проект получался индивидуальным, гармоничным и удобным для повседневной жизни.
+            </p>
+            <a class="button button--muted" href="projects.html">
+              Посмотреть другие проекты
+            </a>
+          </div>
+          <div class="projects__gallery" id="project-gallery">
+            <a class="project project--oak" href="project.html">
+              <img class="project__image" src="assets/images/oak-sky.png" alt="Офис Oak&amp;Sky" loading="lazy">
+              <h3 class="project__name">
+                Oak&amp;Sky
+              </h3>
+            </a>
+            <a class="project project--sacre" href="project.html">
+              <img class="project__image" src="assets/images/sacre-bleu.png" alt="Гостиная Sacré Bleu" loading="lazy">
+              <h3 class="project__name">
+                Sacré Bleu
+              </h3>
+            </a>
+            <a class="project project--by" href="project.html">
+              <img class="project__image" src="assets/images/by-time.png" alt="Кухня By-time" loading="lazy">
+              <h3 class="project__name project__name--dark">
+                By-time
+              </h3>
+            </a>
+            <a class="project project--people" href="project.html">
+              <img class="project__image" src="assets/images/people.png" alt="Ресторан People" loading="lazy">
+              <h3 class="project__name">
+                People
+              </h3>
+            </a>
+          </div>
+          <div class="projects__contact" id="services">
+            <p>
+              Мы беремся за ограниченное количество проектов в год. Если вы планируете ремонт или строительство нового дома, мы будем рады обсудить с вами варианты сотрудничества.
+            </p>
+            <button class="button" type="button" data-open="request-dialog">
+              Оставить заявку
+              <img src="assets/icons/arrow-up.svg" alt="">
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer" id="contacts">
+        <div class="footer__company">
+          <a class="footer__logo" href="#top">
+            <img src="assets/icons/logo-footer.svg" alt="1001 DAY">
+          </a>
+          <p class="footer__legal">
+            <span>
+              Индивидуальный предприниматель
+            </span>
+            <br>
+            Зыбайло Наталья Александровна
+          </p>
+          <p class="footer__tax">
+            <strong>
+              УНП:
+            </strong>
+            191318984
+          </p>
+        </div>
+        <img class="footer__divider" src="assets/icons/divider.svg" alt="">
+        <nav class="footer__navigation" aria-label="Навигация в подвале">
+          <a href="about.html">
+            О нас
+          </a>
+          <a href="projects.html">
+            Проекты
+          </a>
+          <a href="services.html">
+            Услуги
+          </a>
+          <a href="publications.html">
+            Публикации
+          </a>
+          <a href="contacts.html">
+            Контакты
+          </a>
+        </nav>
+        <img class="footer__divider" src="assets/icons/divider.svg" alt="">
+        <div class="footer__contacts">
+          <p>
+            Контакты
+          </p>
+          <p class="footer__detail">
+            <img src="assets/icons/location.svg" alt="">
+            г. Минск, ул. Старовиленский тракт, д.10
+          </p>
+          <a class="footer__detail" href="mailto:buronzmz@gmail.com">
+            <img src="assets/icons/email.svg" alt="">
+            buronzmz@gmail.com
+          </a>
+          <p class="footer__copyright">
+            2026 © Все права защищены
+          </p>
+        </div>
+      </footer>
+    </div>
+    <dialog class="menu" id="menu-dialog" aria-label="Меню">
+      <button class="dialog-close" type="button" data-close aria-label="Закрыть меню">
+        <img src="assets/icons/close.svg" alt="">
+      </button>
+      <nav class="menu__navigation">
+        <a href="about.html">
+          О нас
+        </a>
+        <a href="projects.html">
+          Проекты
+        </a>
+        <a href="services.html">
+          Услуги
+        </a>
+        <a href="publications.html">
+          Публикации
+        </a>
+        <a href="contacts.html">
+          Контакты
+        </a>
+      </nav>
+    </dialog>
+    <dialog class="request" id="request-dialog" aria-labelledby="request-title">
+      <button class="dialog-close" type="button" data-close aria-label="Закрыть заявку">
+        <img src="assets/icons/close.svg" alt="">
+      </button>
+      <h2 class="request__title" id="request-title">
+        Заявка на дизайн
+      </h2>
+      <form class="request__form">
+        <label class="request__field">
+          Ваше имя
+          <input name="name" placeholder="Иван" autocomplete="name" required>
+        </label>
+        <label class="request__field">
+          Ваш телефон
+          <input type="tel" name="phone" placeholder="+ 375 ___ - __ - __" autocomplete="tel" required>
+        </label>
+        <label class="request__field">
+          E-mail для связи
+          <input type="email" name="email" placeholder="info@mail.by" autocomplete="email">
+        </label>
+        <label class="request__field">
+          Объект
+          <select name="object">
+            <option>
+              Дом
+            </option>
+            <option>
+              Квартира
+            </option>
+            <option>
+              Коммерческое помещение
+            </option>
+          </select>
+        </label>
+        <label class="request__field">
+          Площадь объекта
+          <input type="number" name="area" min="1" placeholder="100 кв.м.">
+        </label>
+        <label class="request__field">
+          Необходимая услуга
+          <select name="service">
+            <option>
+              Консультация
+            </option>
+            <option>
+              Дизайн интерьера
+            </option>
+            <option>
+              Авторский надзор
+            </option>
+          </select>
+        </label>
+        <div class="request__details">
+          <label class="request__field">
+            Адрес объекта
+            <textarea name="address" placeholder="г. Минск, ул. Ленина, 123, кв. 1">
+            </textarea>
+          </label>
+          <label class="request__field">
+            Комментарий
+            <textarea name="comment" placeholder="Ваш комментарий (если хотите что-то добавить о проекте)">
+            </textarea>
+          </label>
+        </div>
+        <p class="request__status" role="status" hidden>
+        </p>
+        <button class="button request__submit" type="submit">
+          Оставить заявку
+          <img src="assets/icons/arrow-up.svg" alt="">
+        </button>
+      </form>
+    </dialog>
+  </body>
+</html>

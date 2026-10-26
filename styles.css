@@ -130,7 +130,7 @@ img {
   transition: background-color .35s ease, padding .6s ease;
 
   &.is-scrolled {
-    background: var(--background) url('assets/images/inner-header.png') center / cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(36, 36, 36, 0) 100%);
     padding-block: 30px;
 
     & .site-header__logo {

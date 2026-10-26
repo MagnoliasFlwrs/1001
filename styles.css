@@ -866,6 +866,10 @@ dialog {
   justify-content: space-between;
   padding: 30px var(--content-padding);
   background: var(--background) url('assets/images/inner-header.png') center / cover;
+
+  &.is-scrolled {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(36, 36, 36, 0) 100%);
+  }
 }
 
 .inner-header__logo {

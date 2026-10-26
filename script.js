@@ -161,16 +161,17 @@ function initializeAboutImages() {
 
 initializeAboutImages();
 
-// При прокрутке затемняем шапку, чтобы логотип и меню оставались читаемыми.
-function initializeHomeHeader() {
-  const homeHeader = document.querySelector('.site-header--home');
-  if (!homeHeader) return;
-  const logoImage = homeHeader.querySelector('.site-header__logo img');
-  const originalLogoSource = logoImage.getAttribute('src');
+// При прокрутке меняем фон шапки, а на главной также уменьшаем логотип.
+function initializeHeader() {
+  const header = document.querySelector('.site-header--home, .inner-header');
+  if (!header) return;
+  const logoImage = header.querySelector('.site-header__logo img');
+  const originalLogoSource = logoImage?.getAttribute('src');
 
   function updateHeaderBackground() {
     const isScrolled = window.scrollY > 40;
-    homeHeader.classList.toggle('is-scrolled', isScrolled);
+    header.classList.toggle('is-scrolled', isScrolled);
+    if (!logoImage) return;
     const logoSource = isScrolled ? 'assets/icons/inner-logo.svg' : originalLogoSource;
     if (logoImage.getAttribute('src') !== logoSource) logoImage.setAttribute('src', logoSource);
   }
@@ -179,4 +180,4 @@ function initializeHomeHeader() {
   window.addEventListener('scroll', updateHeaderBackground, { passive: true });
 }
 
-initializeHomeHeader();
+initializeHeader();

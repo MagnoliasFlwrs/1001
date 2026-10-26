@@ -118,3 +118,60 @@ function initializeServiceAccordion() {
 }
 
 initializeServiceAccordion();
+
+// Картинки появляются справа по очереди, когда попадают в область просмотра.
+function initializeAboutImages() {
+  const aboutImages = [...document.querySelectorAll('.about__image')];
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!aboutImages.length || motionPreference.matches || !('IntersectionObserver' in window)) return;
+
+  const imageAnimations = new Map();
+  aboutImages.forEach(image => {
+    const animation = image.animate([
+      { opacity: 0, transform: 'translateX(100px)' },
+      { opacity: 1, transform: 'translateX(0)' },
+    ], {
+      duration: 1100,
+      easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      fill: 'both',
+    });
+    animation.pause();
+    imageAnimations.set(image, animation);
+  });
+
+  const imageObserver = new IntersectionObserver(entries => {
+    const visibleImages = entries.filter(entry => entry.isIntersecting);
+    visibleImages.sort((first, second) => aboutImages.indexOf(first.target) - aboutImages.indexOf(second.target));
+    visibleImages.forEach((entry, index) => {
+      const animation = imageAnimations.get(entry.target);
+      animation.effect.updateTiming({ delay: index * 220 });
+      animation.play();
+      animation.finished.then(() => animation.cancel(), () => {});
+      imageObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.1 });
+
+  aboutImages.forEach(image => imageObserver.observe(image));
+  motionPreference.addEventListener('change', event => {
+    if (!event.matches) return;
+    imageObserver.disconnect();
+    imageAnimations.forEach(animation => animation.cancel());
+  });
+}
+
+initializeAboutImages();
+
+// При прокрутке затемняем шапку, чтобы логотип и меню оставались читаемыми.
+function initializeHomeHeader() {
+  const homeHeader = document.querySelector('.site-header--home');
+  if (!homeHeader) return;
+
+  function updateHeaderBackground() {
+    homeHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+  }
+
+  updateHeaderBackground();
+  window.addEventListener('scroll', updateHeaderBackground, { passive: true });
+}
+
+initializeHomeHeader();

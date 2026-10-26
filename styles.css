@@ -18,6 +18,7 @@
   --accent: #c43307;
   --content-width: 1820px;
   --gutter: 16px;
+  --content-padding: 50px;
 }
 
 * {
@@ -89,7 +90,6 @@ img {
 
 .page {
   max-width: calc(var(--content-width) + var(--gutter) * 2);
-  padding-inline: var(--gutter);
   margin: auto;
 }
 
@@ -118,16 +118,21 @@ img {
 }
 
 .site-header--home {
-  position: absolute;
-  z-index: 3;
+  position: sticky;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   display: flex;
   justify-content: center;
   align-items: center;
   background: url('assets/images/header-shade.png') center/100% 100%;
+  transition: background-color .35s ease;
+
+  &.is-scrolled {
+    background-color: #201c1599;
+  }
 }
 
 .site-header__logo {
@@ -218,7 +223,7 @@ img {
 }
 
 .projects__intro {
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -316,7 +321,7 @@ img {
 }
 
 .projects__contact {
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   background: var(--accent);
   display: flex;
   flex-direction: column;
@@ -327,7 +332,7 @@ img {
 }
 
 .footer {
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -610,12 +615,16 @@ dialog {
 }
 
 @media (max-width: 700px) {
+  :root {
+    --content-padding: 20px;
+  }
+
   .hero {
     height: calc((100vw - 32px) * .67558);
   }
 
   .site-header--home {
-    padding: 20px 16px;
+    padding: 20px var(--content-padding);
     justify-content: space-between;
   }
 
@@ -658,7 +667,7 @@ dialog {
   }
 
   .projects__intro {
-    padding: 20px 16px;
+    padding: 20px var(--content-padding);
     gap: 20px;
   }
 
@@ -718,7 +727,7 @@ dialog {
   }
 
   .projects__contact {
-    padding: 20px 16px;
+    padding: 20px var(--content-padding);
     gap: 20px;
     font-size: 16px;
     line-height: 1.5;
@@ -729,7 +738,7 @@ dialog {
   }
 
   .footer {
-    padding: 20px 16px;
+    padding: 20px var(--content-padding);
     flex-direction: column;
     gap: 20px;
   }
@@ -825,11 +834,14 @@ dialog {
 }
 
 .inner-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 16px;
-  background: url('assets/images/inner-header.png') center / cover;
+  padding: 30px var(--content-padding);
+  background: var(--background) url('assets/images/inner-header.png') center / cover;
 }
 
 .inner-header__logo {
@@ -855,7 +867,7 @@ dialog {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 50px;
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
 }
 
 .category-card {
@@ -870,7 +882,7 @@ dialog {
   align-items: center;
   gap: 20px;
   min-height: 86px;
-  font-size: clamp(32px, 3.02vw, 58px);
+  font-size: clamp(32px, 2.5vw, 48px);
   font-weight: 400;
 }
 
@@ -929,7 +941,7 @@ dialog {
   display: flex;
   align-items: center;
   gap: 30px;
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
 }
 
 .page-heading--gallery {
@@ -948,7 +960,7 @@ dialog {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 50px;
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
 }
 
 .portfolio-card {
@@ -1012,7 +1024,7 @@ dialog {
   .project-gallery {
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 20px 0 30px;
+    padding: 20px var(--content-padding) 30px;
   }
 
   .category-card {
@@ -1033,7 +1045,7 @@ dialog {
 
   .page-heading,
   .page-heading--gallery {
-    padding: 20px 0;
+    padding: 20px var(--content-padding);
     gap: 16px;
   }
 
@@ -1061,7 +1073,7 @@ dialog {
 }
 
 .service__content {
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1146,7 +1158,7 @@ dialog {
   background: #000;
   display: grid;
   grid-template-columns: 35.833333% minmax(0, 1fr);
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   gap: 50px;
 }
 
@@ -1259,7 +1271,7 @@ dialog {
 }
 
 .about__content {
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -1300,6 +1312,7 @@ dialog {
 .about__collage {
   position: relative;
   min-height: 1952px;
+  overflow: clip;
 }
 
 .about__image {
@@ -1330,7 +1343,7 @@ dialog {
 }
 
 .contact-details__content {
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -1439,7 +1452,7 @@ dialog {
   .service__content,
   .about__content,
   .contact-details__content {
-    padding: 20px 0;
+    padding: 20px var(--content-padding);
     gap: 25px;
   }
 
@@ -1471,7 +1484,7 @@ dialog {
 
   .consultation {
     grid-template-columns: 1fr;
-    padding: 30px 16px;
+    padding: 30px var(--content-padding);
     gap: 30px;
   }
 
@@ -1567,10 +1580,21 @@ dialog {
 
 .page--home {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 
   & > .site-header--home {
-    left: var(--gutter);
-    width: calc(100% - var(--gutter) * 2);
+    grid-area: 1 / 1;
+    align-self: start;
+  }
+
+  & > .home-content {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  & > .footer {
+    grid-area: 2 / 1;
   }
 }
 
@@ -1584,7 +1608,7 @@ dialog {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 50px;
-  padding: 50px 16px;
+  padding: 50px var(--content-padding);
 
   @media (max-width: 1100px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1593,7 +1617,7 @@ dialog {
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
-    padding: 30px 0;
+    padding: 30px var(--content-padding);
   }
 }
 

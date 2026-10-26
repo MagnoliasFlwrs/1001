@@ -165,9 +165,14 @@ initializeAboutImages();
 function initializeHomeHeader() {
   const homeHeader = document.querySelector('.site-header--home');
   if (!homeHeader) return;
+  const logoImage = homeHeader.querySelector('.site-header__logo img');
+  const originalLogoSource = logoImage.getAttribute('src');
 
   function updateHeaderBackground() {
-    homeHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+    const isScrolled = window.scrollY > 40;
+    homeHeader.classList.toggle('is-scrolled', isScrolled);
+    const logoSource = isScrolled ? 'assets/icons/inner-logo.svg' : originalLogoSource;
+    if (logoImage.getAttribute('src') !== logoSource) logoImage.setAttribute('src', logoSource);
   }
 
   updateHeaderBackground();
